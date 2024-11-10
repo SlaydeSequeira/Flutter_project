@@ -31,6 +31,10 @@ dependencies:
   flutter:
     sdk: flutter
   google_maps_flutter: ^2.9.0
+  qr_flutter: ^4.1.0
+  shared_preferences: ^2.0.0
+  intl: ^0.18.0
+
 
 
 
