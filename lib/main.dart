@@ -30,6 +30,7 @@ class MyApp extends StatelessWidget {
         '/qr': (context) => const GenerateQRScreen(),
         '/games': (context) => const GamesScreen(),
         '/settings': (context) => const SettingsScreen(),
+        '/register': (context) => const RegisterScreen(), // Add register route
       },
     );
   }
@@ -83,9 +84,30 @@ class _LoginScreenState extends State<LoginScreen> {
                 onPressed: _login,
                 child: const Text('Login'),
               ),
+              const SizedBox(height: 10),
+              TextButton(
+                onPressed: () {
+                  Navigator.pushNamed(context, '/register'); // Navigate to Register screen
+                },
+                child: const Text('Register New User'),
+              ),
             ],
           ),
         ),
+      ),
+    );
+  }
+}
+
+class RegisterScreen extends StatelessWidget {
+  const RegisterScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: const Text('Register')),
+      body: const Center(
+        child: Text('Registration screen (No logic yet)'),
       ),
     );
   }
