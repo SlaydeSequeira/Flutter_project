@@ -1,5 +1,5 @@
-
 // home_screen.dart
+
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -22,8 +22,8 @@ class HomeScreen extends StatelessWidget {
             ),
             label: '',
           ),
-          BottomNavigationBarItem(icon: Icon(Icons.gamepad), label: ''),
-          BottomNavigationBarItem(icon: Icon(Icons.settings), label: ''),
+          BottomNavigationBarItem(icon: Icon(Icons.wallet_giftcard), label: ''),
+          BottomNavigationBarItem(icon: Icon(Icons.wallet), label: ''),
         ],
         type: BottomNavigationBarType.fixed,
         selectedItemColor: Colors.purpleAccent,
@@ -41,10 +41,11 @@ class HomeScreen extends StatelessWidget {
               Navigator.pushNamed(context, '/qr');
               break;
             case 3:
-              Navigator.pushNamed(context, '/games');
+              int userCP = 10000;
+              Navigator.pushNamed(context, '/rewards', arguments: userCP);
               break;
             case 4:
-              Navigator.pushNamed(context, '/settings');
+              Navigator.pushNamed(context, '/wallet');
               break;
           }
         },
@@ -63,12 +64,16 @@ class HomeScreen extends StatelessWidget {
               width: 200,
               height: 200,
             ),
+            const SizedBox(height: 20),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.pushNamed(context, '/daily_streak'); // Navigate to Daily Streak screen
+              },
+              child: const Text('Daily Streak'),
+            ),
           ],
         ),
       ),
     );
   }
 }
-
-
-// TODO Implement this library.

@@ -42,6 +42,14 @@ android {
 flutter {
     source = "../.."
 }
+
 dependencies {
     implementation 'com.google.android.gms:play-services-maps:17.0.1'
+
+    // Firebase dependencies
+    implementation 'com.google.firebase:firebase-messaging:23.1.1'
+    implementation 'com.google.firebase:firebase-core:21.1.0'  // This is required for Firebase services
 }
+
+// Add this at the bottom of the file
+apply plugin: 'com.google.gms.google-services'
